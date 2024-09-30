@@ -11,7 +11,9 @@ public class Pagina {
         this.elementos = new long[MAX_ELEMENTOS];
         this.numElementos = 0;
     }
-
+    public long[] getPagina() {
+        return elementos;
+    }
     // Verifica si la página está llena
     public boolean estaLlena() {
         return numElementos >= MAX_ELEMENTOS;
@@ -57,5 +59,14 @@ public class Pagina {
             System.out.print(elementos[i] + " ");
         }
         System.out.println();
+    }
+    public static void main(String[] args) {
+        Pagina pagina = new Pagina();
+        pagina.insertarElemento(3);
+        pagina.insertarElemento(5);
+        pagina.insertarElemento(34);
+        pagina.insertarElemento(35);
+        pagina.insertarElemento(34);
+        pagina.imprimirElementos();
     }
 }

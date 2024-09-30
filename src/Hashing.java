@@ -1,32 +1,55 @@
-package tarea1;
+package src;
 
 import java.util.ArrayList;
-import java.nio.charset.StandardCharsets;
-import java.util.zip.CRC32;
 
+public class Hashing {
+    private ArrayList<ArrayList<Pagina>> tabla ;
+    private int p; // Número actual de páginas en la tabla
+    private int t; // Parámetro t para el tamaño de la tabla
+    private long totalIOs; // Contador total de accesos I/O
+    private long totalInserciones; // Contador total de inserciones //TODO : Creo que no es necesario este parametro porque la cantidad de insercione la manejamos desde afuera.
+    private double maxCostoPromedio; // Costo promedio máximo permitido
+    private int sumaIos; // suma de todas los Ios de todos los elementos insertados.
 
-public class HashingLineal {
-    private ArrayList<ArrayList<page>> tabla ; 
-    private int contadorOperaciones;
-    private int costoPromedio; //hay que setearlo uno mismo
-    private int p; // Número de páginas 
-    private int t; // Contador t
-
-
-    public HashingLineal(int p){
-        this.p = p;
-        this.tabla = new ArrayList<>(p);  // Inicializa la tabla con p listas
-        // Inicializar cada página (y sus listas de desbordamiento)
+    public Hashing(double maxCostoPromedio){
+        this.p = 4;
+        this.t = 0;
+        this.tabla = new ArrayList<>(p); // iniciamos la tabla con con p elementos.
         for (int i = 0; i < p; i++) {
-            ArrayList<page> paginas = new ArrayList<>();
-            paginas.add(new page());  // Agrega la página principal
+            ArrayList<Pagina> paginas = new ArrayList<>();
+            paginas.add(new Pagina());  // Agrega la página principal
             tabla.add(paginas);       // Añade la lista de páginas (inicialmente solo la principal)
         }
-        this.contadorOperaciones = 0;
-        this.costoPromedio = 0;
-        this.t = 0;
+        this.totalIOs = 0; // Inicialmente no hay accesos
+        this.totalInserciones = 0; // Inicialmente no hay inserciones
+        this.maxCostoPromedio = maxCostoPromedio;
+    }
+    public void imprimirTabla() {
+        for (int i = 0; i < tabla.size(); i++) {
+            System.out.print("Página " + i + ": ");
+            ArrayList<Pagina> listaPaginas = tabla.get(i);
+            for (Pagina pg : listaPaginas) {
+                long[] datos = pg.getPagina();
+                for (int j = 1; j < datos.length; j++) {  // Mostrar solo los valores insertados (índices desde 1)
+                    if (datos[j] != 0) {
+                        System.out.print(datos[j] + " ");
+                    }
+                }
+                System.out.print(" | ");  // Separar las páginas de rebalse
+            }
+            System.out.println();
+        }
+
     }
 
+
+    public static void main(String[] args) {
+        Hashing tabla1 = new Hashing( 10);
+
+        tabla1.imprimirTabla();
+    }
+}
+/*
     // Metodo para imprimir el estado de la tabla de hash
     public void imprimirTabla() {
         for (int i = 0; i < tabla.size(); i++) {
@@ -131,6 +154,4 @@ public class HashingLineal {
         }
         //TODO : acá hay que calcular nuevamente el costo promedio de busqueda .
     }
-
-
-}
+ */
