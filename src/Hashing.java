@@ -9,8 +9,8 @@ public class Hashing {
     private int p; // Número actual de páginas en la tabla
     private int t; // Parámetro t para el tamaño de la tabla
     private int totalIOs; // Contador total de accesos I/O
-    private long totalInserciones; // Contador total de inserciones //TODO : Creo que no es necesario este parametro porque la cantidad de insercione la manejamos desde afuera.
-    private double maxCostoPromedio; // Costo promedio máximo permitido
+    private int totalInserciones; // Contador total de inserciones //TODO : Creo que no es necesario este parametro porque la cantidad de insercione la manejamos desde afuera.
+    private final double maxCostoPromedio; // Costo promedio máximo permitido
     private int sumaIos; // suma de todas los Ios de todos los elementos insertados.
     private Random random;
     public Hashing(double maxCostoPromedio){
@@ -42,8 +42,12 @@ public class Hashing {
             }
             System.out.println();
         }
-
     }
+
+    public int getPromedio(){
+        return sumaIos/totalInserciones;
+    }
+
     public static long hashLong(long input) {
         input = (~input) + (input << 21); // mezcla de bits
         input = input ^ (input >>> 24);
@@ -77,17 +81,9 @@ public class Hashing {
         ArrayList<Pagina> paginas = tabla.get(index);
         // Registrar acceso I/O al leer la lista de páginas
         totalIOs+=1;
-        if ( maxCostoPromedio<=totalIOs) {
-            System.out.println("se cumple que se supera el costo de insercion");
-            expandirPagina();
-        }
         // Verificar si el elemento ya existe (lectura) REVISAMOS LA ORIGINAL Y LAS DE REBALSE
         for (Pagina pagina : paginas) {
             totalIOs++; // Acceso I/O por revisar cada página //
-            if (maxCostoPromedio<=totalIOs) {
-                System.out.println("se cumple que se supera el costo de insercion");
-                expandirPagina();
-            }
             if (pagina.contieneElemento(y)) {
                 System.out.println("elemento ya esta en la tabla");
                 return; // El elemento ya está en la tabla, no se necesita inserción
@@ -98,27 +94,29 @@ public class Hashing {
             // Si la última página no está llena, inserta el elemento
             ultimaPagina.insertarElemento(y);
             totalIOs+=1; // Acceso I/O por escribir en la página
-            if ( maxCostoPromedio<=totalIOs) {
-                System.out.println("se cumple que se supera el costo de insersion");
-                expandirPagina();
-            }
-            //TODO coloque esto aca porque significa que insertamos el elemento y sumamos cuanto se demoro al total de ios.
+            System.out.println("elemento insertado");
+
             sumaIos += totalIOs; // sumamos cuanto nos costo llegar a este punto y se lo añadimos a sumaIos
             System.out.printf("Ios necesarios para insertar el elemento: %d%n", totalIOs);
-
-
+            totalInserciones+=1;
+            if ( maxCostoPromedio<=getPromedio()) {
+                System.out.println("se cumple que se supera el costo de insercion");
+                expandirPagina();
+            }
         } else {
             // Si la última página está llena, crea una nueva página de rebalse
             Pagina nuevaPagina = new Pagina();
             nuevaPagina.insertarElemento(y);
             paginas.add(nuevaPagina);
+
             totalIOs += 2; // Acceso I/O por crear nueva página y escribir en ella
-            if ( maxCostoPromedio<=totalIOs) { //TODO : no se si aca deberiamos verificar por cada suma o si esta bien que sumemos los 2 altiro y dps verifiquemos.
-                expandirPagina();
-            }
-            //TODO coloque esto aca porque significa que insertamos el elemento y sumamos cuanto se demoro al total de ios.
             sumaIos += totalIOs; // sumamos cuanto nos costo llegar a este punto y se lo añadimos a sumaIos
             System.out.printf("Ios necesarios para insertar el elemento luego de qe creamos una pagnia de rebalse: %d%n", totalIOs);
+            totalInserciones+=1;
+            if ( maxCostoPromedio<=getPromedio()) {
+                System.out.println("se cumple que se supera el costo de insercion");
+                expandirPagina();
+            }
 
         }
     }
