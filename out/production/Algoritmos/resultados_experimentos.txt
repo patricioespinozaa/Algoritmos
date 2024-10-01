@@ -1,0 +1,162 @@
+Experimentos de Hashing Lineal
+------------------------------------
+Datos insertados: 1024
+Costo Promedio Máximo: 10.0
+Promedio de accesos I/O: 6
+------------------------------------
+Datos insertados: 1024
+Costo Promedio Máximo: 20.0
+Promedio de accesos I/O: 6
+------------------------------------
+Datos insertados: 1024
+Costo Promedio Máximo: 30.0
+Promedio de accesos I/O: 6
+------------------------------------
+Datos insertados: 1024
+Costo Promedio Máximo: 40.0
+Promedio de accesos I/O: 6
+------------------------------------
+Datos insertados: 1024
+Costo Promedio Máximo: 50.0
+Promedio de accesos I/O: 6
+------------------------------------
+Datos insertados: 4096
+Costo Promedio Máximo: 10.0
+Promedio de accesos I/O: 9
+------------------------------------
+Datos insertados: 4096
+Costo Promedio Máximo: 20.0
+Promedio de accesos I/O: 18
+------------------------------------
+Datos insertados: 4096
+Costo Promedio Máximo: 30.0
+Promedio de accesos I/O: 18
+------------------------------------
+Datos insertados: 4096
+Costo Promedio Máximo: 40.0
+Promedio de accesos I/O: 18
+------------------------------------
+Datos insertados: 4096
+Costo Promedio Máximo: 50.0
+Promedio de accesos I/O: 18
+------------------------------------
+Datos insertados: 16384
+Costo Promedio Máximo: 10.0
+Promedio de accesos I/O: 9
+------------------------------------
+Datos insertados: 16384
+Costo Promedio Máximo: 20.0
+Promedio de accesos I/O: 19
+------------------------------------
+Datos insertados: 16384
+Costo Promedio Máximo: 30.0
+Promedio de accesos I/O: 29
+------------------------------------
+Datos insertados: 16384
+Costo Promedio Máximo: 40.0
+Promedio de accesos I/O: 39
+------------------------------------
+Datos insertados: 16384
+Costo Promedio Máximo: 50.0
+Promedio de accesos I/O: 44
+------------------------------------
+Datos insertados: 65536
+Costo Promedio Máximo: 10.0
+Promedio de accesos I/O: 9
+------------------------------------
+Datos insertados: 65536
+Costo Promedio Máximo: 20.0
+Promedio de accesos I/O: 19
+------------------------------------
+Datos insertados: 65536
+Costo Promedio Máximo: 30.0
+Promedio de accesos I/O: 29
+------------------------------------
+Datos insertados: 65536
+Costo Promedio Máximo: 40.0
+Promedio de accesos I/O: 37
+------------------------------------
+Datos insertados: 65536
+Costo Promedio Máximo: 50.0
+Promedio de accesos I/O: 47
+------------------------------------
+Datos insertados: 262144
+Costo Promedio Máximo: 10.0
+Promedio de accesos I/O: 9
+------------------------------------
+Datos insertados: 262144
+Costo Promedio Máximo: 20.0
+Promedio de accesos I/O: 19
+------------------------------------
+Datos insertados: 262144
+Costo Promedio Máximo: 30.0
+Promedio de accesos I/O: 28
+------------------------------------
+Datos insertados: 262144
+Costo Promedio Máximo: 40.0
+Promedio de accesos I/O: 38
+------------------------------------
+Datos insertados: 262144
+Costo Promedio Máximo: 50.0
+Promedio de accesos I/O: 49
+------------------------------------
+Datos insertados: 1048576
+Costo Promedio Máximo: 10.0
+Promedio de accesos I/O: 9
+------------------------------------
+Datos insertados: 1048576
+Costo Promedio Máximo: 20.0
+Promedio de accesos I/O: 19
+------------------------------------
+Datos insertados: 1048576
+Costo Promedio Máximo: 30.0
+Promedio de accesos I/O: 29
+------------------------------------
+Datos insertados: 1048576
+Costo Promedio Máximo: 40.0
+Promedio de accesos I/O: 39
+------------------------------------
+Datos insertados: 1048576
+Costo Promedio Máximo: 50.0
+Promedio de accesos I/O: 49
+------------------------------------
+Datos insertados: 4194304
+Costo Promedio Máximo: 10.0
+Promedio de accesos I/O: 9
+------------------------------------
+Datos insertados: 4194304
+Costo Promedio Máximo: 20.0
+Promedio de accesos I/O: 19
+------------------------------------
+Datos insertados: 4194304
+Costo Promedio Máximo: 30.0
+Promedio de accesos I/O: 29
+------------------------------------
+Datos insertados: 4194304
+Costo Promedio Máximo: 40.0
+Promedio de accesos I/O: 39
+------------------------------------
+Datos insertados: 4194304
+Costo Promedio Máximo: 50.0
+Promedio de accesos I/O: 49
+------------------------------------
+Datos insertados: 16777216
+Costo Promedio Máximo: 10.0
+Promedio de accesos I/O: 9
+------------------------------------
+Datos insertados: 16777216
+Costo Promedio Máximo: 20.0
+Promedio de accesos I/O: 19
+------------------------------------
+Datos insertados: 16777216
+Costo Promedio Máximo: 30.0
+Promedio de accesos I/O: 29
+------------------------------------
+Datos insertados: 16777216
+Costo Promedio Máximo: 40.0
+Promedio de accesos I/O: 39
+------------------------------------
+Datos insertados: 16777216
+Costo Promedio Máximo: 50.0
+Promedio de accesos I/O: 49
+------------------------------------

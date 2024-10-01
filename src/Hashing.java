@@ -62,7 +62,7 @@ public class Hashing {
     public void insertar(long y) {
         long clave = Math.abs(hashLong(y)); // Calcula el índice de hash
         long k = clave % (long) Math.pow(2, t + 1);
-        System.out.printf("el hash es %d\n",k);
+        //System.out.printf("el hash es %d\n",k);
         if (k < p) {
             // Inserta en la página k o en una página de rebalse si está llena
             insertarEnPagina((int) k, y);
@@ -85,7 +85,7 @@ public class Hashing {
         for (Pagina pagina : paginas) {
             totalIOs++; // Acceso I/O por revisar cada página //
             if (pagina.contieneElemento(y)) {
-                System.out.println("elemento ya esta en la tabla");
+                //System.out.println("elemento ya esta en la tabla");
                 return; // El elemento ya está en la tabla, no se necesita inserción
             }
         }
@@ -94,14 +94,14 @@ public class Hashing {
             // Si la última página no está llena, inserta el elemento
             ultimaPagina.insertarElemento(y);
             totalIOs+=1; // Acceso I/O por escribir en la página
-            System.out.println("elemento insertado");
+            //System.out.println("elemento insertado");
 
             sumaIos += totalIOs; // sumamos cuanto nos costo llegar a este punto y se lo añadimos a sumaIos
             totalInserciones+=1;
             int promedio = getPromedio();
-            System.out.printf("Ios necesarios para insertar el elemento: %d%n", promedio);
+            //System.out.printf("Ios necesarios para insertar el elemento: %d%n", promedio);
             if ( maxCostoPromedio<=promedio) {
-                System.out.println("se cumple que se supera el costo de insercion");
+                //System.out.println("se cumple que se supera el costo de insercion");
                 expandirPagina();
             }
         } else {
@@ -114,12 +114,11 @@ public class Hashing {
             sumaIos += totalIOs; // sumamos cuanto nos costo llegar a este punto y se lo añadimos a sumaIos
             totalInserciones+=1;
             int promedio = getPromedio();
-            System.out.printf("Ios necesarios para insertar el elemento luego de qe creamos una pagnia de rebalse: %d%n", promedio);
+            //System.out.printf("Ios necesarios para insertar el elemento luego de qe creamos una pagnia de rebalse: %d%n", promedio);
             if ( maxCostoPromedio<=promedio) {
-                System.out.println("se cumple que se supera el costo de insercion");
+                //System.out.println("se cumple que se supera el costo de insercion");
                 expandirPagina();
             }
-
         }
     }
     private void insertarRehashing(int index, long y) {
@@ -134,7 +133,7 @@ public class Hashing {
             // Si la última página no está llena, inserta el elemento
             ultimaPagina.insertarElemento(y);
 
-            System.out.println("elemento insertado rehashing");
+           // System.out.println("elemento insertado rehashing");
         } else {
             // Si la última página está llena, crea una nueva página de rebalse
             Pagina nuevaPagina = new Pagina();
@@ -143,7 +142,7 @@ public class Hashing {
         }
     }
     private void expandirPagina() {
-        System.out.println("expandiendo tabla");
+        //System.out.println("expandiendo tabla");
         int indexExpansion = p - (int) Math.pow(2, t);
         ArrayList<Pagina> paginasAExpandir = tabla.get(indexExpansion);
 
@@ -172,22 +171,52 @@ public class Hashing {
 
         // Incrementa p y ajusta t si es necesario
         p++;
-        System.out.println("aumentamos p");
+        //System.out.println("aumentamos p");
         if (p == Math.pow(2, t + 1)) {
-            System.out.println("aumentamos t");
+            //System.out.println("aumentamos t");
             t++;
         }
     }
+    public int getCantidadPaginas() {
+        int totalPaginas = 0;
+        for (ArrayList<Pagina> listaPaginas : tabla) {
+            totalPaginas += listaPaginas.size(); // Contar la página principal y sus páginas de rebalse
+        }
+        return totalPaginas;
+    }
+    public double porcentajeLlenado() {
+        double porcentaje = 0;
+        // Recorremos todas las listas de páginas en la tabla
+        for (ArrayList<Pagina> listaPaginas : tabla) {
+            double sumaPorcentajesListaPaginas = 0;
+            // Recorremos cada página en la lista
+            for (Pagina p : listaPaginas) {
+                int numElementos = p.getNumElementos();  // Número de elementos en la página
+                double porcentajePagina = ((double) numElementos / 128) * 100;  // Convertimos a porcentaje
+                sumaPorcentajesListaPaginas += porcentajePagina;
+            }
+            // Promedio del porcentaje de llenado para las páginas de rebalse (si hay más de una)
+            double promedioListaPaginas = sumaPorcentajesListaPaginas / listaPaginas.size();
+            porcentaje += promedioListaPaginas;
+        }
+        // Promedio del porcentaje de llenado en toda la tabla
+        return porcentaje / tabla.size();
+    }
 
     public static void main(String[] args) {
-        Hashing tabla1 = new Hashing( 20);
+        Hashing tabla1 = new Hashing( 10);
         tabla1.imprimirTabla();
         Random random = new Random();
-        for (int i = 0; i < 10000; i++) {
+
+        for (int i = 0; i < Math.pow(2,15); i++) {
             long elemento = random.nextLong();
             tabla1.insertar(elemento); // Insertar elemento en la tabla
         }
+        int cantidadPaginas = tabla1.getCantidadPaginas();
         tabla1.imprimirTabla();
+        System.out.println(cantidadPaginas);
+        double porcentaje = tabla1.porcentajeLlenado();
+        System.out.println(porcentaje);
 
     }
 }
