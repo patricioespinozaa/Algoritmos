@@ -9,7 +9,7 @@ public class Hashing {
     private int p; // Número actual de páginas en la tabla
     private int t; // Parámetro t para el tamaño de la tabla
     private int totalIOs; // Contador total de accesos I/O
-    private int totalInserciones; // Contador total de inserciones //TODO : Creo que no es necesario este parametro porque la cantidad de insercione la manejamos desde afuera.
+    private int totalInserciones; // Contador total de inserciones //
     private final double maxCostoPromedio; // Costo promedio máximo permitido
     private int sumaIos; // suma de todas los Ios de todos los elementos insertados.
     private Random random;
@@ -97,9 +97,10 @@ public class Hashing {
             System.out.println("elemento insertado");
 
             sumaIos += totalIOs; // sumamos cuanto nos costo llegar a este punto y se lo añadimos a sumaIos
-            System.out.printf("Ios necesarios para insertar el elemento: %d%n", totalIOs);
             totalInserciones+=1;
-            if ( maxCostoPromedio<=getPromedio()) {
+            int promedio = getPromedio();
+            System.out.printf("Ios necesarios para insertar el elemento: %d%n", promedio);
+            if ( maxCostoPromedio<=promedio) {
                 System.out.println("se cumple que se supera el costo de insercion");
                 expandirPagina();
             }
@@ -111,13 +112,34 @@ public class Hashing {
 
             totalIOs += 2; // Acceso I/O por crear nueva página y escribir en ella
             sumaIos += totalIOs; // sumamos cuanto nos costo llegar a este punto y se lo añadimos a sumaIos
-            System.out.printf("Ios necesarios para insertar el elemento luego de qe creamos una pagnia de rebalse: %d%n", totalIOs);
             totalInserciones+=1;
-            if ( maxCostoPromedio<=getPromedio()) {
+            int promedio = getPromedio();
+            System.out.printf("Ios necesarios para insertar el elemento luego de qe creamos una pagnia de rebalse: %d%n", promedio);
+            if ( maxCostoPromedio<=promedio) {
                 System.out.println("se cumple que se supera el costo de insercion");
                 expandirPagina();
             }
 
+        }
+    }
+    private void insertarRehashing(int index, long y) {
+
+        if (index < 0 || index >= tabla.size()) {
+            throw new IndexOutOfBoundsException("Índice fuera de los límites: " + index);
+        }
+        ArrayList<Pagina> paginas = tabla.get(index);
+
+        Pagina ultimaPagina = paginas.getLast();
+        if (!ultimaPagina.estaLlena()) {
+            // Si la última página no está llena, inserta el elemento
+            ultimaPagina.insertarElemento(y);
+
+            System.out.println("elemento insertado rehashing");
+        } else {
+            // Si la última página está llena, crea una nueva página de rebalse
+            Pagina nuevaPagina = new Pagina();
+            nuevaPagina.insertarElemento(y);
+            paginas.add(nuevaPagina);
         }
     }
     private void expandirPagina() {
@@ -130,15 +152,27 @@ public class Hashing {
         nuevaListaPaginas.add(new Pagina());
         tabla.add(nuevaListaPaginas);
 
-        // Redistribuir los elementos de la página que se está expandiendo
+        // Copiamos los elementos que hay en la página y en las de rebalse
+        ArrayList<Long> elementosAReinsertar = new ArrayList<>();
         for (Pagina pagina : paginasAExpandir) {
             for (int i = 0; i < pagina.getNumElementos(); i++) {
                 long elemento = pagina.obtenerElemento(i);
-                insertar(elemento); // Reinsertamos el elemento en la tabla con la nueva función de hash
+                elementosAReinsertar.add(elemento);
             }
         }
+        //luego podemos borrar lo que hay en la pagina
+        paginasAExpandir.clear();
+        paginasAExpandir.add(new Pagina());
+        // Reinsertar elementos
+        for (long elemento : elementosAReinsertar) {
+            long clave = Math.abs(hashLong(elemento)); // Calcula el índice de hash
+            long k = clave % (long) Math.pow(2, t + 1);
+            insertarRehashing((int)k ,elemento);
+        }
+
         // Incrementa p y ajusta t si es necesario
         p++;
+        System.out.println("aumentamos p");
         if (p == Math.pow(2, t + 1)) {
             System.out.println("aumentamos t");
             t++;
@@ -146,7 +180,7 @@ public class Hashing {
     }
 
     public static void main(String[] args) {
-        Hashing tabla1 = new Hashing( 10);
+        Hashing tabla1 = new Hashing( 20);
         tabla1.imprimirTabla();
         Random random = new Random();
         for (int i = 0; i < 10000; i++) {

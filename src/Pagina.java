@@ -60,6 +60,10 @@ public class Pagina {
         }
         System.out.println();
     }
+    public void vaciarPagina() {
+        this.elementos = new long[elementos.length];  // Reinicia el array
+        this.numElementos = 0;  // Reinicia el contador de elementos
+    }
     public static void main(String[] args) {
         Pagina pagina = new Pagina();
         pagina.insertarElemento(3);
