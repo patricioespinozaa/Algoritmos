@@ -171,10 +171,10 @@ public class Hashing {
 
         // Luego podemos borrar lo que hay en la pagina
         paginasAExpandir.clear();
-        totalIOs ++;                                                        // * I/O por borrar los elementos de la página (1 o todos los elem)
+        totalIOs ++;                                                        //  I/O por borrar los elementos de la página (1 o todos los elem)
 
         paginasAExpandir.add(new Pagina());
-        totalIOs++;                                                         // * I/O por agregar nueva página a la lista de páginas
+        totalIOs++;                                                         //  I/O por agregar nueva página a la lista de páginas
         
         // Reinsertar elementos
         for (long elemento : elementosAReinsertar) {                        
