@@ -1,60 +1,84 @@
 package src;
-import java.util.Random;
+
 import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Random;
 
 public class Experimentacion {
+
     public static void main(String[] args) {
-        // Definimos los rangos para el número de elementos (2^10 a 2^24) y el costoPromedioMaximo
-        int[] potenciasDeDos = {10, 12, 14, 16, 18, 20, 22, 24};
-        double[] costosPromedioMaximos = {10, 20, 30, 40, 50}; // Diferentes valores de maxCostoPromedio
+        int[] tamaniosN = new int[]{10, 12}; //, 14, 16, 18, 20, 22, 24}; // Tamaños de N (2^10 a 2^24)
+        double[] costosMaximos = new double[]{10.0, 20.0}; //, 30.0, 40.0, 50.0}; // Diferentes valores de costo máximo permitido
+        String archivoResultados = "resultados_experimentos.txt";
 
-        // Nombre del archivo de logs
-        String nombreArchivo = "resultados_experimentos.txt";
+        // Listas para almacenar todas las series de datos para el gráfico (1)
+        List<List<Integer>> listaCantidadDatos = new ArrayList<>();
+        List<List<Integer>> listaCostosReales = new ArrayList<>();
 
-        try (BufferedWriter writer = new BufferedWriter(new FileWriter(nombreArchivo, true))) { // 'true' para no sobrescribir
+        // Listas para el gráfico (2): Porcentaje de llenado y costos reales
+        List<List<Double>> listaPorcentajesLlenado = new ArrayList<>();
+        List<List<Integer>> listaCostosRealesLlenado = new ArrayList<>();
 
-            // Escribimos una cabecera inicial para el archivo de logs
-            writer.write("Experimentos de Hashing Lineal\n");
-            writer.write("------------------------------------\n");
+        try (BufferedWriter escritor = new BufferedWriter(new FileWriter(archivoResultados, true))) {
+            escritor.write("Experimentos de Hashing Lineal\n");
+            escritor.write("------------------------------------\n");
 
-            // Para cada combinación de cantidad de datos y costo promedio máximo
-            for (int potencia : potenciasDeDos) {
-                int cantidadDeDatos = (int) Math.pow(2, potencia); // Número de datos a insertar
+            for (double costoMaximo : costosMaximos) {
+                List<Integer> cantidadDatos = new ArrayList<>(); // Eje X
+                List<Integer> costosReales = new ArrayList<>();  // Eje Y (para los costos reales)
+                List<Double> porcentajesLlenado = new ArrayList<>(); // Para el gráfico (2)
 
-                for (double maxCostoPromedio : costosPromedioMaximos) {
-                    // Crear una nueva tabla hash con el maxCostoPromedio
-                    Hashing tablaHash = new Hashing(maxCostoPromedio);
-
+                for (int tamanioN : tamaniosN) {
+                    int N = (int) Math.pow(2.0, tamanioN); // Cantidad de datos
+                    Hashing tablaHash = new Hashing(costoMaximo);
                     Random random = new Random();
 
-                    // Insertar elementos aleatorios en la tabla
-                    for (int i = 0; i < cantidadDeDatos; i++) {
-                        long elemento = random.nextLong();
-                        tablaHash.insertar(elemento);
-                    }
-                    // Guardamos los resultados del experimento en el archivo de logs
-                    writer.write("Datos insertados: " + cantidadDeDatos + "\n");
-                    writer.write("Costo Promedio Máximo: " + maxCostoPromedio + "\n");
-                    writer.write("Promedio de accesos I/O: " + tablaHash.getPromedio() + "\n");
-                    writer.write("------------------------------------\n");
+                    for (int i = 0; i < N; i++) {
+                        long numero = random.nextLong();
+                        tablaHash.insertar(numero);
 
-                    // También puedes imprimir los resultados en consola si lo deseas
-                    System.out.println("Inserciones completadas para " + cantidadDeDatos + " elementos con costoPromedioMaximo: " + maxCostoPromedio);
-                    System.out.println("Promedio de accesos I/O: " + tablaHash.getPromedio());
+                        // Recolectamos datos cada 1000 inserciones
+                        if (i % 1000 == 0) {
+                            cantidadDatos.add(i); // Cantidad de datos ingresados
+                            costosReales.add(tablaHash.getPromedio()); // Costo promedio real
+                            porcentajesLlenado.add(tablaHash.porcentajeLlenado()); // Porcentaje de llenado
+                        }
+                    }
+
+                    // Escribir datos en el archivo
+                    escritor.write("Datos insertados: " + N + "\n");
+                    escritor.write("Costo Promedio Máximo: " + costoMaximo + "\n");
+                    escritor.write("Costo Promedio Real (I/Os): " + tablaHash.getPromedio() + "\n");
+                    escritor.write("Porcentaje de llenado final: " + tablaHash.porcentajeLlenado() + "%\n");
+                    escritor.write("------------------------------------\n");
+
+                    // Mostrar en consola para verificar el progreso
+                    System.out.println("Inserciones completadas para " + N + " elementos con cmáx: " + costoMaximo);
+                    System.out.println("Costo Promedio Real (I/Os): " + tablaHash.getPromedio());
+                    System.out.println("Porcentaje de llenado: " + tablaHash.porcentajeLlenado() + "%");
                     System.out.println("----------------------------------------------------");
                 }
+
+                // Añadir los datos de cada cmáx a las listas globales
+                listaCantidadDatos.add(cantidadDatos);
+                listaCostosReales.add(costosReales);
+                listaPorcentajesLlenado.add(porcentajesLlenado);
+                listaCostosRealesLlenado.add(costosReales);
             }
 
-            // Al final del proceso, cerramos el archivo automáticamente gracias al try-with-resources
+            // Graficar costo promedio real vs cantidad de datos ingresados (todas las curvas de cmáx en un gráfico)
+            Graficar.graficarCostoPromedioVsDatosMultipleCmax(listaCantidadDatos, listaCostosReales, costosMaximos);
+
+            // Graficar porcentaje de llenado vs costos reales (para cada cmáx)
+            for (int i = 0; i < costosMaximos.length; i++) {
+                Graficar.graficarLlenadoVsCostos(listaCantidadDatos.get(i), listaPorcentajesLlenado.get(i), listaCostosReales.get(i), costosMaximos[i]);
+            }
 
         } catch (IOException e) {
             System.out.println("Error al escribir el archivo de logs: " + e.getMessage());
         }
     }
 }
-
-
-
-

@@ -245,6 +245,7 @@ public class Hashing {
      */
 
     // Método principal
+    /* 
     public static void main(String[] args) {
         Hashing tabla1 = new Hashing( 10);                          // Define el costo promedio máximo permitido
         tabla1.imprimirTabla();                                                      // Imprime la tabla inicial
@@ -273,4 +274,5 @@ public class Hashing {
         // Instanciar y usar la clase Graficar para visualizar la relación
         Graficar.graficarRelacion(porcentajesLlenado, costosPromedio);
     }
+    */
 }

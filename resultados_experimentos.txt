@@ -1,0 +1,128 @@
+Experimentos de Hashing Lineal
+------------------------------------
+Datos insertados: 1024
+Costo Promedio Máximo: 10.0
+Costo Promedio Real (I/Os): 6
+Porcentaje de llenado final: 100.0%
+------------------------------------
+Datos insertados: 4096
+Costo Promedio Máximo: 10.0
+Costo Promedio Real (I/Os): 9
+Porcentaje de llenado final: 94.36848958333333%
+------------------------------------
+Experimentos de Hashing Lineal
+------------------------------------
+Datos insertados: 1024
+Costo Promedio Máximo: 10.0
+Costo Promedio Real (I/Os): 6
+Porcentaje de llenado final: 100.0%
+------------------------------------
+Datos insertados: 4096
+Costo Promedio Máximo: 10.0
+Costo Promedio Real (I/Os): 9
+Porcentaje de llenado final: 97.75933159722221%
+------------------------------------
+Datos insertados: 1024
+Costo Promedio Máximo: 20.0
+Costo Promedio Real (I/Os): 6
+Porcentaje de llenado final: 100.0%
+------------------------------------
+Datos insertados: 4096
+Costo Promedio Máximo: 20.0
+Costo Promedio Real (I/Os): 18
+Porcentaje de llenado final: 100.0%
+------------------------------------
+Experimentos de Hashing Lineal
+------------------------------------
+Datos insertados: 1024
+Costo Promedio Máximo: 10.0
+Costo Promedio Real (I/Os): 6
+------------------------------------
+Datos insertados: 4096
+Costo Promedio Máximo: 10.0
+Costo Promedio Real (I/Os): 9
+------------------------------------
+Datos insertados: 1024
+Costo Promedio Máximo: 20.0
+Costo Promedio Real (I/Os): 6
+------------------------------------
+Datos insertados: 4096
+Costo Promedio Máximo: 20.0
+Costo Promedio Real (I/Os): 18
+------------------------------------
+Experimentos de Hashing Lineal
+------------------------------------
+Datos insertados: 1024
+Costo Promedio Máximo: 10.0
+Costo Promedio Real (I/Os): 6
+------------------------------------
+Datos insertados: 4096
+Costo Promedio Máximo: 10.0
+Costo Promedio Real (I/Os): 9
+------------------------------------
+Datos insertados: 1024
+Costo Promedio Máximo: 20.0
+Costo Promedio Real (I/Os): 6
+------------------------------------
+Datos insertados: 4096
+Costo Promedio Máximo: 20.0
+Costo Promedio Real (I/Os): 18
+------------------------------------
+Experimentos de Hashing Lineal
+------------------------------------
+Datos insertados: 1024
+Costo Promedio Máximo: 10.0
+Costo Promedio Real (I/Os): 6
+------------------------------------
+Datos insertados: 4096
+Costo Promedio Máximo: 10.0
+Costo Promedio Real (I/Os): 9
+------------------------------------
+Datos insertados: 1024
+Costo Promedio Máximo: 20.0
+Costo Promedio Real (I/Os): 6
+------------------------------------
+Datos insertados: 4096
+Costo Promedio Máximo: 20.0
+Costo Promedio Real (I/Os): 18
+------------------------------------
+Experimentos de Hashing Lineal
+------------------------------------
+Datos insertados: 1024
+Costo Promedio Máximo: 10.0
+Costo Promedio Real (I/Os): 6
+------------------------------------
+Datos insertados: 4096
+Costo Promedio Máximo: 10.0
+Costo Promedio Real (I/Os): 9
+------------------------------------
+Datos insertados: 1024
+Costo Promedio Máximo: 20.0
+Costo Promedio Real (I/Os): 6
+------------------------------------
+Datos insertados: 4096
+Costo Promedio Máximo: 20.0
+Costo Promedio Real (I/Os): 18
+------------------------------------
+Experimentos de Hashing Lineal
+------------------------------------
+Datos insertados: 1024
+Costo Promedio Máximo: 10.0
+Costo Promedio Real (I/Os): 6
+Porcentaje de llenado final: 100.0%
+------------------------------------
+Datos insertados: 4096
+Costo Promedio Máximo: 10.0
+Costo Promedio Real (I/Os): 9
+Porcentaje de llenado final: 94.33322482638889%
+------------------------------------
+Datos insertados: 1024
+Costo Promedio Máximo: 20.0
+Costo Promedio Real (I/Os): 6
+Porcentaje de llenado final: 100.0%
+------------------------------------
+Datos insertados: 4096
+Costo Promedio Máximo: 20.0
+Costo Promedio Real (I/Os): 18
+Porcentaje de llenado final: 100.0%
+------------------------------------
