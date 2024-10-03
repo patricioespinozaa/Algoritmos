@@ -10,8 +10,8 @@ import java.util.Random;
 public class Experimentacion {
 
     public static void main(String[] args) {
-        int[] tamaniosN = new int[]{10, 12}; //, 14, 16, 18, 20, 22, 24}; // Tamaños de N (2^10 a 2^24)
-        double[] costosMaximos = new double[]{10.0, 20.0}; //, 30.0, 40.0, 50.0}; // Diferentes valores de costo máximo permitido
+        int[] tamaniosN = new int[]{10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24}; // Tamaños de N (2^10 a 2^24)
+        double[] costosMaximos = new double[]{10.0, 30.0, 50.0, 70.0, 90.0}; //, 30.0, 40.0, 50.0}; // Diferentes valores de costo máximo permitido
         String archivoResultados = "resultados_experimentos.txt";
 
         // Listas para almacenar todas las series de datos para el gráfico (1)
