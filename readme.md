@@ -1,9 +1,9 @@
-compilar: javac -cp "lib/*" src/GraficoEjemplo.java
-ejecutar: java -cp "lib/*;src" src/GraficoEjemplo.java
+# Tarea 1 Diseño y Analisis de algoritmos
 
-compilar todos los archivos java: 
-    javac -cp "lib/jcommon-1.0.23.jar;lib/jfreechart-1.5.3.jar;." src/*.java
+## Compilación
+En terminal ejecutar:
+>javac -cp "lib/jcommon-1.0.23.jar;lib/jfreechart-1.5.3.jar;." src/*.java 
 
-ejecutar experimento:
-    java -cp "lib/jcommon-1.0.23.jar;lib/jfreechart-1.5.3.jar;." src.ExperimentacionHashing
-
+## Ejecutar
+En terminal ejecutar:
+>java -cp "lib/jcommon-1.0.23.jar;lib/jfreechart-1.5.3.jar;." src.Experimentacion                   
