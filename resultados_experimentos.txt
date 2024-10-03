@@ -148,3 +148,380 @@ Costo Promedio Máximo: 20.0
 Costo Promedio Real (I/Os): 18
 Porcentaje de llenado final: 100.0%
 ------------------------------------
+Experimentos de Hashing Lineal
+------------------------------------
+Datos insertados: 1024
+Costo Promedio Máximo: 10.0
+Costo Promedio Real (I/Os): 6
+Porcentaje de llenado final: 100.0%
+------------------------------------
+Datos insertados: 2048
+Costo Promedio Máximo: 10.0
+Costo Promedio Real (I/Os): 9
+Porcentaje de llenado final: 89.423828125%
+------------------------------------
+Datos insertados: 4096
+Costo Promedio Máximo: 10.0
+Costo Promedio Real (I/Os): 9
+Porcentaje de llenado final: 88.64293981481482%
+------------------------------------
+Datos insertados: 8192
+Costo Promedio Máximo: 10.0
+Costo Promedio Real (I/Os): 9
+Porcentaje de llenado final: 92.89279513888891%
+------------------------------------
+Datos insertados: 16384
+Costo Promedio Máximo: 10.0
+Costo Promedio Real (I/Os): 9
+Porcentaje de llenado final: 91.58864030934343%
+------------------------------------
+Datos insertados: 32768
+Costo Promedio Máximo: 10.0
+Costo Promedio Real (I/Os): 9
+Porcentaje de llenado final: 93.31494140625%
+------------------------------------
+Datos insertados: 65536
+Costo Promedio Máximo: 10.0
+Costo Promedio Real (I/Os): 9
+Porcentaje de llenado final: 93.61288941936728%
+------------------------------------
+Datos insertados: 131072
+Costo Promedio Máximo: 10.0
+Costo Promedio Real (I/Os): 9
+Porcentaje de llenado final: 94.60946180555558%
+------------------------------------
+Datos insertados: 262144
+Costo Promedio Máximo: 10.0
+Costo Promedio Real (I/Os): 9
+Porcentaje de llenado final: 93.80890600019987%
+------------------------------------
+Datos insertados: 524288
+Costo Promedio Máximo: 10.0
+Costo Promedio Real (I/Os): 9
+Porcentaje de llenado final: 94.2186252793742%
+------------------------------------
+Datos insertados: 1048576
+Costo Promedio Máximo: 10.0
+Costo Promedio Real (I/Os): 9
+Porcentaje de llenado final: 93.15416011666203%
+------------------------------------
+Datos insertados: 2097152
+Costo Promedio Máximo: 10.0
+Costo Promedio Real (I/Os): 9
+Porcentaje de llenado final: 93.72492119695477%
+------------------------------------
+Datos insertados: 4194304
+Costo Promedio Máximo: 10.0
+Costo Promedio Real (I/Os): 9
+Porcentaje de llenado final: 94.31804366610412%
+------------------------------------
+Datos insertados: 8388608
+Costo Promedio Máximo: 10.0
+Costo Promedio Real (I/Os): 9
+Porcentaje de llenado final: 93.48662490021503%
+------------------------------------
+Datos insertados: 16777216
+Costo Promedio Máximo: 10.0
+Costo Promedio Real (I/Os): 9
+Porcentaje de llenado final: 94.35919496671109%
+------------------------------------
+Datos insertados: 1024
+Costo Promedio Máximo: 30.0
+Costo Promedio Real (I/Os): 6
+Porcentaje de llenado final: 100.0%
+------------------------------------
+Datos insertados: 2048
+Costo Promedio Máximo: 30.0
+Costo Promedio Real (I/Os): 10
+Porcentaje de llenado final: 100.0%
+------------------------------------
+Datos insertados: 4096
+Costo Promedio Máximo: 30.0
+Costo Promedio Real (I/Os): 18
+Porcentaje de llenado final: 100.0%
+------------------------------------
+Datos insertados: 8192
+Costo Promedio Máximo: 30.0
+Costo Promedio Real (I/Os): 29
+Porcentaje de llenado final: 98.92282196969695%
+------------------------------------
+Datos insertados: 16384
+Costo Promedio Máximo: 30.0
+Costo Promedio Real (I/Os): 27
+Porcentaje de llenado final: 98.47227154356061%
+------------------------------------
+Datos insertados: 32768
+Costo Promedio Máximo: 30.0
+Costo Promedio Real (I/Os): 29
+Porcentaje de llenado final: 98.36637158414501%
+------------------------------------
+Datos insertados: 65536
+Costo Promedio Máximo: 30.0
+Costo Promedio Real (I/Os): 27
+Porcentaje de llenado final: 97.64029382171904%
+------------------------------------
+Datos insertados: 131072
+Costo Promedio Máximo: 30.0
+Costo Promedio Real (I/Os): 29
+Porcentaje de llenado final: 97.7058517930531%
+------------------------------------
+Datos insertados: 262144
+Costo Promedio Máximo: 30.0
+Costo Promedio Real (I/Os): 29
+Porcentaje de llenado final: 97.69377365610961%
+------------------------------------
+Datos insertados: 524288
+Costo Promedio Máximo: 30.0
+Costo Promedio Real (I/Os): 29
+Porcentaje de llenado final: 98.57407873233345%
+------------------------------------
+Datos insertados: 1048576
+Costo Promedio Máximo: 30.0
+Costo Promedio Real (I/Os): 29
+Porcentaje de llenado final: 98.51561297879115%
+------------------------------------
+Datos insertados: 2097152
+Costo Promedio Máximo: 30.0
+Costo Promedio Real (I/Os): 29
+Porcentaje de llenado final: 97.76906250005024%
+------------------------------------
+Datos insertados: 4194304
+Costo Promedio Máximo: 30.0
+Costo Promedio Real (I/Os): 29
+Porcentaje de llenado final: 97.69397130390207%
+------------------------------------
+Datos insertados: 8388608
+Costo Promedio Máximo: 30.0
+Costo Promedio Real (I/Os): 29
+Porcentaje de llenado final: 97.7472857986312%
+------------------------------------
+Datos insertados: 16777216
+Costo Promedio Máximo: 30.0
+Costo Promedio Real (I/Os): 29
+Porcentaje de llenado final: 97.84369464680073%
+------------------------------------
+Datos insertados: 1024
+Costo Promedio Máximo: 50.0
+Costo Promedio Real (I/Os): 6
+Porcentaje de llenado final: 100.0%
+------------------------------------
+Datos insertados: 2048
+Costo Promedio Máximo: 50.0
+Costo Promedio Real (I/Os): 10
+Porcentaje de llenado final: 100.0%
+------------------------------------
+Datos insertados: 4096
+Costo Promedio Máximo: 50.0
+Costo Promedio Real (I/Os): 18
+Porcentaje de llenado final: 100.0%
+------------------------------------
+Datos insertados: 8192
+Costo Promedio Máximo: 50.0
+Costo Promedio Real (I/Os): 34
+Porcentaje de llenado final: 100.0%
+------------------------------------
+Datos insertados: 16384
+Costo Promedio Máximo: 50.0
+Costo Promedio Real (I/Os): 44
+Porcentaje de llenado final: 98.47264145359848%
+------------------------------------
+Datos insertados: 32768
+Costo Promedio Máximo: 50.0
+Costo Promedio Real (I/Os): 49
+Porcentaje de llenado final: 99.08659988679835%
+------------------------------------
+Datos insertados: 65536
+Costo Promedio Máximo: 50.0
+Costo Promedio Real (I/Os): 48
+Porcentaje de llenado final: 98.28571992761948%
+------------------------------------
+Datos insertados: 131072
+Costo Promedio Máximo: 50.0
+Costo Promedio Real (I/Os): 49
+Porcentaje de llenado final: 99.23299702760572%
+------------------------------------
+Datos insertados: 262144
+Costo Promedio Máximo: 50.0
+Costo Promedio Real (I/Os): 48
+Porcentaje de llenado final: 98.53299710024511%
+------------------------------------
+Datos insertados: 524288
+Costo Promedio Máximo: 50.0
+Costo Promedio Real (I/Os): 49
+Porcentaje de llenado final: 99.10350115564316%
+------------------------------------
+Datos insertados: 1048576
+Costo Promedio Máximo: 50.0
+Costo Promedio Real (I/Os): 49
+Porcentaje de llenado final: 99.09123152945332%
+------------------------------------
+Datos insertados: 2097152
+Costo Promedio Máximo: 50.0
+Costo Promedio Real (I/Os): 49
+Porcentaje de llenado final: 98.62801175907123%
+------------------------------------
+Datos insertados: 4194304
+Costo Promedio Máximo: 50.0
+Costo Promedio Real (I/Os): 49
+Porcentaje de llenado final: 98.69064867234168%
+------------------------------------
+Datos insertados: 8388608
+Costo Promedio Máximo: 50.0
+Costo Promedio Real (I/Os): 49
+Porcentaje de llenado final: 98.73362545370114%
+------------------------------------
+Datos insertados: 16777216
+Costo Promedio Máximo: 50.0
+Costo Promedio Real (I/Os): 49
+Porcentaje de llenado final: 98.67135470408904%
+------------------------------------
+Datos insertados: 1024
+Costo Promedio Máximo: 70.0
+Costo Promedio Real (I/Os): 6
+Porcentaje de llenado final: 100.0%
+------------------------------------
+Datos insertados: 2048
+Costo Promedio Máximo: 70.0
+Costo Promedio Real (I/Os): 10
+Porcentaje de llenado final: 100.0%
+------------------------------------
+Datos insertados: 4096
+Costo Promedio Máximo: 70.0
+Costo Promedio Real (I/Os): 18
+Porcentaje de llenado final: 100.0%
+------------------------------------
+Datos insertados: 8192
+Costo Promedio Máximo: 70.0
+Costo Promedio Real (I/Os): 34
+Porcentaje de llenado final: 100.0%
+------------------------------------
+Datos insertados: 16384
+Costo Promedio Máximo: 70.0
+Costo Promedio Real (I/Os): 66
+Porcentaje de llenado final: 100.0%
+------------------------------------
+Datos insertados: 32768
+Costo Promedio Máximo: 70.0
+Costo Promedio Real (I/Os): 68
+Porcentaje de llenado final: 99.10626547931236%
+------------------------------------
+Datos insertados: 65536
+Costo Promedio Máximo: 70.0
+Costo Promedio Real (I/Os): 66
+Porcentaje de llenado final: 99.37201253607505%
+------------------------------------
+Datos insertados: 131072
+Costo Promedio Máximo: 70.0
+Costo Promedio Real (I/Os): 65
+Porcentaje de llenado final: 99.32320544716787%
+------------------------------------
+Datos insertados: 262144
+Costo Promedio Máximo: 70.0
+Costo Promedio Real (I/Os): 68
+Porcentaje de llenado final: 98.9059687057734%
+------------------------------------
+Datos insertados: 524288
+Costo Promedio Máximo: 70.0
+Costo Promedio Real (I/Os): 66
+Porcentaje de llenado final: 99.15414663774678%
+------------------------------------
+Datos insertados: 1048576
+Costo Promedio Máximo: 70.0
+Costo Promedio Real (I/Os): 69
+Porcentaje de llenado final: 98.95302919614898%
+------------------------------------
+Datos insertados: 2097152
+Costo Promedio Máximo: 70.0
+Costo Promedio Real (I/Os): 69
+Porcentaje de llenado final: 99.24881618300755%
+------------------------------------
+Datos insertados: 4194304
+Costo Promedio Máximo: 70.0
+Costo Promedio Real (I/Os): 69
+Porcentaje de llenado final: 99.26859799808425%
+------------------------------------
+Datos insertados: 8388608
+Costo Promedio Máximo: 70.0
+Costo Promedio Real (I/Os): 69
+Porcentaje de llenado final: 99.25521373024827%
+------------------------------------
+Datos insertados: 16777216
+Costo Promedio Máximo: 70.0
+Costo Promedio Real (I/Os): 69
+Porcentaje de llenado final: 99.21773037777128%
+------------------------------------
+Datos insertados: 1024
+Costo Promedio Máximo: 90.0
+Costo Promedio Real (I/Os): 6
+Porcentaje de llenado final: 100.0%
+------------------------------------
+Datos insertados: 2048
+Costo Promedio Máximo: 90.0
+Costo Promedio Real (I/Os): 10
+Porcentaje de llenado final: 100.0%
+------------------------------------
+Datos insertados: 4096
+Costo Promedio Máximo: 90.0
+Costo Promedio Real (I/Os): 18
+Porcentaje de llenado final: 100.0%
+------------------------------------
+Datos insertados: 8192
+Costo Promedio Máximo: 90.0
+Costo Promedio Real (I/Os): 34
+Porcentaje de llenado final: 100.0%
+------------------------------------
+Datos insertados: 16384
+Costo Promedio Máximo: 90.0
+Costo Promedio Real (I/Os): 66
+Porcentaje de llenado final: 100.0%
+------------------------------------
+Datos insertados: 32768
+Costo Promedio Máximo: 90.0
+Costo Promedio Real (I/Os): 87
+Porcentaje de llenado final: 99.18732471955127%
+------------------------------------
+Datos insertados: 65536
+Costo Promedio Máximo: 90.0
+Costo Promedio Real (I/Os): 83
+Porcentaje de llenado final: 99.3679151914829%
+------------------------------------
+Datos insertados: 131072
+Costo Promedio Máximo: 90.0
+Costo Promedio Real (I/Os): 79
+Porcentaje de llenado final: 99.34604613625623%
+------------------------------------
+Datos insertados: 262144
+Costo Promedio Máximo: 90.0
+Costo Promedio Real (I/Os): 89
+Porcentaje de llenado final: 99.22102402082871%
+------------------------------------
+Datos insertados: 524288
+Costo Promedio Máximo: 90.0
+Costo Promedio Real (I/Os): 88
+Porcentaje de llenado final: 99.25933984801925%
+------------------------------------
+Datos insertados: 1048576
+Costo Promedio Máximo: 90.0
+Costo Promedio Real (I/Os): 88
+Porcentaje de llenado final: 99.32443455561342%
+------------------------------------
+Datos insertados: 2097152
+Costo Promedio Máximo: 90.0
+Costo Promedio Real (I/Os): 88
+Porcentaje de llenado final: 99.1468890978826%
+------------------------------------
+Datos insertados: 4194304
+Costo Promedio Máximo: 90.0
+Costo Promedio Real (I/Os): 89
+Porcentaje de llenado final: 99.32924229958184%
+------------------------------------
+Datos insertados: 8388608
+Costo Promedio Máximo: 90.0
+Costo Promedio Real (I/Os): 87
+Porcentaje de llenado final: 99.25328939549762%
+------------------------------------
+Datos insertados: 16777216
+Costo Promedio Máximo: 90.0
+Costo Promedio Real (I/Os): 89
+Porcentaje de llenado final: 99.26871561100738%
+------------------------------------
