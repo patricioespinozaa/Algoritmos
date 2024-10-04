@@ -2,7 +2,7 @@
 -----------------------------------------HASHING LINEAL--------------------------------------------------------------------
 
 
-Tarea de implementación del algoritmo de Hashing lineal en disco. 
+Implementación del algoritmo de Hashing lineal en memoria principal. 
 Para ejecutar este codigo necesitas hacer lo siguiente: 
 
 ## Compilación
