@@ -1,5 +1,7 @@
 # Tarea 1 Diseño y Analisis de algoritmos
 -----------------------------------------HASHING LINEAL--------------------------------------------------------------------
+
+
 Tarea de implementación del algoritmo de Hashing lineal en disco. 
 Para ejecutar este codigo necesitas hacer lo siguiente: 
 
