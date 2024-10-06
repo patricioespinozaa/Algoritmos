@@ -1,3 +1,5 @@
+// ======================== ESTRUCTURA PARA LOS GRAFICOS ======================== //
+
 package src;
 
 import org.jfree.chart.ChartFactory;

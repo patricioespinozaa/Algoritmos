@@ -1,8 +1,15 @@
 # Tarea 1 Diseño y Analisis de algoritmos
 -----------------------------------------HASHING LINEAL--------------------------------------------------------------------
+<br>
+> Integrantes: Francisco Almeida, Patricio Espinoza, Scarlett Plaza.
 
+>Profesor: Gonzalo Navarro
 
-Implementación del algoritmo de Hashing lineal en memoria principal. 
+>Auxiliares: Máximo Flores V., Sergio Rojas H.
+
+>Fecha de entrega: 06 de Septiembre de 2024
+
+Este repositorio consiste en la implementación del algoritmo de Hashing lineal en memoria principal. 
 Para ejecutar este codigo necesitas hacer lo siguiente: 
 
 ## Compilación

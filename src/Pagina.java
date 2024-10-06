@@ -1,13 +1,5 @@
-package src;
 // ======================== ESTRUCTURA DE PÁGINA ======================== //
-
-
-/* 
- ==== Realizado ====
-- Los elementos a almacenar serán del tipo long long de C/C++, es decir, enteros de 64 bits (si
-  utilizan otro lenguaje permitido deben asegurarse de que cumplan con ese tamaño). 
-- 
-*/
+package src;
 
 public class Pagina {
     private static final int MAX_ELEMENTOS = 128;        // 1024 bytes/8 bytes por cada long
@@ -61,17 +53,6 @@ public class Pagina {
         this.elementos = new long[elementos.length];    // Reinicia el array
         this.numElementos = 0;                          // Reinicia el contador de elementos presentes en la página
     }
-
-    // Imprime todos los elementos de la página
-    /*
-    public void imprimirElementos() {
-        System.out.print("Página: ");
-        for (int i = 0; i < numElementos; i++) {
-            System.out.print(elementos[i] + " ");
-        }
-        System.out.println();
-    }
-    */
 
     // Imprime todos los elementos de la página
     public void imprimirElementos() {

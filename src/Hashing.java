@@ -1,8 +1,10 @@
+// ======================== ESTRUCTURA DE HASHING ======================== //
+
 package src;
 
 import java.util.ArrayList;
-import java.util.List;
-import java.util.Random;
+//import java.util.List;
+//import java.util.Random;
 
 public class Hashing {
     private ArrayList<ArrayList<Pagina>> tabla ;                        // Tabla de hash con listas de páginas
@@ -12,7 +14,7 @@ public class Hashing {
     private int totalInserciones;                                       // Contador total de inserciones 
     private final double maxCostoPromedio;                              // Costo promedio máximo permitido
     private int sumaIos;                                                // suma de todas los Ios de todos los elementos insertados.
-    private Random random;                                              // Generador de números aleatorios
+    //private Random random;                                              // Generador de números aleatorios
 
     // Constructor: inicializa la tabla de hash con p páginas y el costo promedio máximo
     public Hashing(double maxCostoPromedio){
@@ -27,7 +29,7 @@ public class Hashing {
         this.totalIOs = 0;                                              // Inicialmente no hay accesos
         this.totalInserciones = 0;                                      // Inicialmente no hay inserciones
         this.maxCostoPromedio = maxCostoPromedio;                       // Costo promedio máximo permitido definido por el usuario
-        this.random = new Random();                                     // Inicializa el generador de números aleatorios
+        //this.random = new Random();                                     // Inicializa el generador de números aleatorios
     }
 
     public void imprimirTabla() {                                       // Imprime la tabla de hash
@@ -224,28 +226,8 @@ public class Hashing {
         return porcentaje / tabla.size();
     }
 
+    // Test pequeño
     /*
-     // Obtiene el porcentaje de llenado promedio en la tabla
-    public double porcentajeLlenado() {
-        int totalElementos = 0;
-        int totalCapacidad = 0;
-
-        // Recorremos todas las listas de páginas en la tabla
-        for (ArrayList<Pagina> listaPaginas : tabla) {
-            // Recorremos cada página en la lista (incluyendo las de rebalse)
-            for (Pagina p : listaPaginas) {
-                totalElementos += p.getNumElementos();  // Sumar los elementos de cada página
-                totalCapacidad += 128;  // Cada página tiene capacidad para 128 elementos
-            }
-        }
-
-        // Calculamos el porcentaje de llenado total
-        return ((double) totalElementos / totalCapacidad) * 100;
-    }   
-     */
-
-    // Método principal
-    /* 
     public static void main(String[] args) {
         Hashing tabla1 = new Hashing( 10);                          // Define el costo promedio máximo permitido
         tabla1.imprimirTabla();                                                      // Imprime la tabla inicial
@@ -270,9 +252,6 @@ public class Hashing {
         System.out.println("\n Cantidad de paginas :"+ cantidadPaginas+"");          // Imprime la cantidad de páginas
         double porcentaje = tabla1.porcentajeLlenado();
         System.out.println("\n Porcentaje de llenado :"+ porcentaje+"");             // Imprime el porcentaje de llenado
-        
-        // Instanciar y usar la clase Graficar para visualizar la relación
-        Graficar.graficarRelacion(porcentajesLlenado, costosPromedio);
     }
     */
 }
