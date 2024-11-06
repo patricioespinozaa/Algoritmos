@@ -121,6 +121,59 @@ public class Experiment {
         }
         endTime = System.nanoTime();
         System.out.println("Tiempo de búsqueda Splay Tree (Experimento 2): " + (endTime - startTime) / 1e6 + " ms");
+
+
+        /* ------------------------- Experimento 3 ------------------------- */
+        System.out.println("\nInicio del Experimento 3:");
+
+        // Ordenar A antes de insertarlo en los árboles
+        Collections.sort(A);
+
+        // Reinicializar árboles para el tercer experimento
+        bst = new BinarySearchTree();
+        splayTree = new SplayTree();
+
+        // Tiempo de inserción en BinarySearchTree para Experimento 3
+        startTime = System.nanoTime();
+        for (int key : A) {
+            bst.insert(key);
+        }
+        endTime = System.nanoTime();
+        System.out.println("Tiempo de inserción ABB (Experimento 3): " + (endTime - startTime) / 1e6 + " ms");
+
+        // Tiempo de inserción en SplayTree para Experimento 3
+        startTime = System.nanoTime();
+        for (int key : A) {
+            splayTree.insert(key);
+        }
+        endTime = System.nanoTime();
+        System.out.println("Tiempo de inserción Splay Tree (Experimento 3): " + (endTime - startTime) / 1e6 + " ms");
+
+        // Crear arreglo B para búsquedas aleatorias como en Experimento 1
+        B.clear();
+        for (int key : A) {
+            for (int j = 0; j < copies; j++) {
+                B.add(key);
+            }
+        }
+        Collections.shuffle(B); // Permutación aleatoria de B
+
+        // Realizar búsquedas en BinarySearchTree para Experimento 3
+        startTime = System.nanoTime();
+        for (int key : B) {
+            bst.search(key);
+        }
+        endTime = System.nanoTime();
+        System.out.println("Tiempo de búsqueda ABB (Experimento 3): " + (endTime - startTime) / 1e6 + " ms");
+
+        // Realizar búsquedas en SplayTree para Experimento 3
+        startTime = System.nanoTime();
+        for (int key : B) {
+            splayTree.search(key);
+        }
+        endTime = System.nanoTime();
+        System.out.println("Tiempo de búsqueda Splay Tree (Experimento 3): " + (endTime - startTime) / 1e6 + " ms");
+
     }
 
     // Calcular la constante C para función de probabilidad f(i) = C / (i+1)^2
