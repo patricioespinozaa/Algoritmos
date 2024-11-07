@@ -1,0 +1,3 @@
+Iteracion,N,M,Tiempo_Insercion_ABB,Tiempo_Insercion_Splay,Tiempo_Busqueda_ABB,Tiempo_Busqueda_Splay,Costo_Promedio_ABB,Costo_Promedio_Splay
+1,100000,10000000,38,9171,99,5162,2888,3140,4229,7543,0,00028883,0,00042298
+2,200000,20000000,104,7766,194,1007,6954,2474,14242,1364,0,00034771,0,00071211
