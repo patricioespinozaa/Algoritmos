@@ -7,8 +7,8 @@ public class Experimento4 {
         int N = 100000;
         int M = 100 * N;
 
-        BinarySearchTree bst = new BinarySearchTree();
-        SplayTree splayTree = new SplayTree();
+        IterativeBinarySearchTree bst = new IterativeBinarySearchTree();
+        IterativeSplayTree splayTree = new IterativeSplayTree();
 
         // Generar enteros únicos en A y hacer copia ordenada en C
         List<Integer> A = ExperimentUtils.generateUniqueKeys(N, N * 10);

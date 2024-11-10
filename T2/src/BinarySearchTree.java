@@ -1,50 +1,76 @@
-// ABB Clasico
-
+// Clase BinarySearchTree representa un Árbol Binario de Búsqueda (ABB).
 public class BinarySearchTree {
+    // Nodo raíz del árbol.
     Node root;
 
+    // Constructor de la clase. Inicializa el árbol vacío.
     BinarySearchTree() {
         root = null;
     }
 
     // ======================== INSERCION EN ABB CLASICO ======================== //
 
-    // Insertar un nuevo nodo en el árbol
+    /**
+     * Inserta un nuevo nodo con la clave especificada en el árbol.
+     * @param key Clave del nuevo nodo a insertar.
+     */
     void insert(int key) {
         root = insertRec(root, key);
     }
 
-    Node insertRec(Node root, int key) {                 // Sea x el elemento a insertar
-        if (root == null) {                              // Si la raíz es vacía
-            root = new Node(key);                        // se crea un árbol de un solo nodo que contiene el elemento a insertar
+    /**
+     * Método recursivo para insertar un nodo en el ABB.
+     * @param root Nodo raíz actual del subárbol.
+     * @param key Clave del nuevo nodo a insertar.
+     * @return Nodo actualizado después de la inserción.
+     */
+    Node insertRec(Node root, int key) {
+        // Si el subárbol está vacío, crea un nuevo nodo con la clave dada.
+        if (root == null) {
+            root = new Node(key);
             return root;
         }
 
-        // En caso contrario, se compara x con el elemento de la raíz r:
-        if (key < root.key)                              // Si x <r, se realiza el mismo proceso en el subárbol izquierdo.
+        // Compara la clave a insertar con el valor en el nodo raíz:
+        if (key < root.key) {
+            // Si la clave es menor, inserta en el subárbol izquierdo.
             root.left = insertRec(root.left, key);
-        else if (key > root.key)                         // Si x >r, se realiza el mismo proceso en el subárbol derechox
+        } else if (key > root.key) {
+            // Si la clave es mayor, inserta en el subárbol derecho.
             root.right = insertRec(root.right, key);
+        }
+        // Retorna el nodo raíz (no cambia si la clave ya existe).
         return root;
     }
 
     // ======================== BUSQUEDA EN ABB CLASICO ======================== //
 
-    // Buscar un nodo en el árbol
+    /**
+     * Busca un nodo en el árbol.
+     * @param key Clave del nodo a buscar.
+     * @return true si el nodo con la clave dada existe, false en caso contrario.
+     */
     boolean search(int key) {
         return searchRec(root, key) != null;
     }
 
-    Node searchRec(Node root, int key) {                //  Sea x el elemento buscado
-        if (root == null || root.key == key)            //  se inicia la búsqueda en la raíz
-            return root;                                // Si el elemento en la raíz es x, se termina la búsqueda con éxito
+    /**
+     * Método recursivo para buscar un nodo en el ABB.
+     * @param root Nodo raíz actual del subárbol.
+     * @param key Clave del nodo a buscar.
+     * @return Nodo que contiene la clave buscada, o null si no existe.
+     */
+    Node searchRec(Node root, int key) {
+        // Caso base: si el nodo es null o contiene la clave buscada.
+        if (root == null || root.key == key)
+            return root;
 
-        // En caso contrario, se compara x con el elemento de la raíz r:
-        if (key < root.key)                             // Si x <r, se realiza el mismo proceso en el subárbol izquierdo.
+        // Compara la clave buscada con el valor en el nodo raíz:
+        if (key < root.key) {
+            // Si la clave es menor, busca en el subárbol izquierdo.
             return searchRec(root.left, key);
-        return searchRec(root.right, key);              // Si x >r, se realiza el mismo proceso en el subárbol derecho.
-
-        // Si eventualmente el subárbol donde deberíamos seguir la búsqueda es vacío, significa que el elemento
-        // no existe, terminando el proceso de manera infructuosa.
+        }
+        // Si la clave es mayor, busca en el subárbol derecho.
+        return searchRec(root.right, key);
     }
 }
