@@ -1,0 +1,107 @@
+Valor de N: 10000
+Número de búsquedas M: 1000000
+
+Inicio del Experimento 3 con N = 10000
+Tiempo de inserción ABB (Experimento 3): 103.9275 ms
+Tiempo de inserción Splay Tree (Experimento 3): 3.1974 ms
+PS C:\Users\pbast\Desktop\Github\Algoritmos\T2\src> javac *.java     
+PS C:\Users\pbast\Desktop\Github\Algoritmos\T2\src> java Experimento3
+Valor de N: 10000
+Número de búsquedas M: 1000000
+
+Inicio del Experimento 3 con N = 10000
+Tiempo de inserción ABB (Experimento 3): 118.1944 ms
+Tiempo de inserción Splay Tree (Experimento 3): 2.3531 ms
+Tiempo de búsqueda ABB (Experimento 3): 12633.5047 ms
+Costo promedio de búsqueda ABB: 0.0126335047 ms por búsqueda
+Tiempo de búsqueda Splay Tree (Experimento 3): 243.465 ms
+Costo promedio de búsqueda Splay Tree: 2.43465E-4 ms por búsqueda
+---------------------------------------------------
+Valor de N: 20000
+Número de búsquedas M: 2000000
+
+Inicio del Experimento 3 con N = 20000
+Tiempo de inserción ABB (Experimento 3): 620.3366 ms
+Tiempo de inserción Splay Tree (Experimento 3): 1.5037 ms
+Tiempo de búsqueda ABB (Experimento 3): 51720.7123 ms
+Costo promedio de búsqueda ABB: 0.02586035615 ms por búsqueda
+Tiempo de búsqueda Splay Tree (Experimento 3): 610.3145 ms
+Costo promedio de búsqueda Splay Tree: 3.0515725E-4 ms por búsqueda
+---------------------------------------------------
+Valor de N: 30000
+Número de búsquedas M: 3000000
+
+Inicio del Experimento 3 con N = 30000
+Tiempo de inserción ABB (Experimento 3): 1458.0809 ms
+Tiempo de inserción Splay Tree (Experimento 3): 1.5084 ms
+Tiempo de búsqueda ABB (Experimento 3): 102113.7752 ms
+Costo promedio de búsqueda ABB: 0.03403792506666667 ms por búsqueda
+Tiempo de búsqueda Splay Tree (Experimento 3): 851.2006 ms
+Costo promedio de búsqueda Splay Tree: 2.837335333333333E-4 ms por búsqueda
+---------------------------------------------------
+Valor de N: 40000
+Número de búsquedas M: 4000000
+
+Inicio del Experimento 3 con N = 40000
+Tiempo de inserción ABB (Experimento 3): 2026.7085 ms
+Tiempo de inserción Splay Tree (Experimento 3): 1.7211 ms
+Tiempo de búsqueda ABB (Experimento 3): 180151.6071 ms
+Costo promedio de búsqueda ABB: 0.045037901775 ms por búsqueda
+Tiempo de búsqueda Splay Tree (Experimento 3): 1431.9474 ms
+Costo promedio de búsqueda Splay Tree: 3.5798685E-4 ms por búsqueda
+---------------------------------------------------
+Valor de N: 50000
+Número de búsquedas M: 5000000
+
+Inicio del Experimento 3 con N = 50000
+Tiempo de inserción ABB (Experimento 3): 2997.5249 ms
+Tiempo de inserción Splay Tree (Experimento 3): 2.5227 ms
+Tiempo de búsqueda ABB (Experimento 3): 276959.4886 ms
+Costo promedio de búsqueda ABB: 0.05539189772 ms por búsqueda
+Tiempo de búsqueda Splay Tree (Experimento 3): 2115.7203 ms
+Costo promedio de búsqueda Splay Tree: 4.2314406E-4 ms por búsqueda
+---------------------------------------------------
+Valor de N: 60000
+Número de búsquedas M: 6000000
+
+Inicio del Experimento 3 con N = 60000
+Tiempo de inserción ABB (Experimento 3): 4163.0897 ms
+Tiempo de inserción Splay Tree (Experimento 3): 2.771 ms
+Tiempo de búsqueda ABB (Experimento 3): 449176.4446 ms
+Costo promedio de búsqueda ABB: 0.07486274076666666 ms por búsqueda
+Tiempo de búsqueda Splay Tree (Experimento 3): 4470.7228 ms
+Costo promedio de búsqueda Splay Tree: 7.451204666666666E-4 ms por búsqueda
+---------------------------------------------------
+Valor de N: 70000
+Número de búsquedas M: 7000000
+
+Inicio del Experimento 3 con N = 70000
+Tiempo de inserción ABB (Experimento 3): 7916.1974 ms
+Tiempo de inserción Splay Tree (Experimento 3): 3.6422 ms
+Tiempo de búsqueda ABB (Experimento 3): 580531.3665 ms
+Costo promedio de búsqueda ABB: 0.08293305235714286 ms por búsqueda
+Tiempo de búsqueda Splay Tree (Experimento 3): 3307.0464 ms
+Costo promedio de búsqueda Splay Tree: 4.724352E-4 ms por búsqueda
+---------------------------------------------------
+Valor de N: 80000
+Número de búsquedas M: 8000000
+
+Inicio del Experimento 3 con N = 80000
+Tiempo de inserción ABB (Experimento 3): 7528.7227 ms
+Tiempo de inserción Splay Tree (Experimento 3): 4.4785 ms
+Tiempo de búsqueda ABB (Experimento 3): 865545.87 ms
+Costo promedio de búsqueda ABB: 0.10819323375 ms por búsqueda
+Tiempo de búsqueda Splay Tree (Experimento 3): 3266.51 ms
+Costo promedio de búsqueda Splay Tree: 4.0831375000000003E-4 ms por búsqueda
+---------------------------------------------------
+Valor de N: 90000
+Número de búsquedas M: 9000000
+
+Inicio del Experimento 3 con N = 90000
+Tiempo de inserción ABB (Experimento 3): 9431.5087 ms
+Tiempo de inserción Splay Tree (Experimento 3): 1.4152 ms
+Tiempo de búsqueda ABB (Experimento 3): 1209204.491 ms
+Costo promedio de búsqueda ABB: 0.13435605455555555 ms por búsqueda
+Tiempo de búsqueda Splay Tree (Experimento 3): 6374.3409 ms
+Costo promedio de búsqueda Splay Tree: 7.082601E-4 ms por búsqueda
+---------------------------------------------------

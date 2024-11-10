@@ -114,7 +114,7 @@ public class Experimento2 {
     private static double calculateC(int N) {
         double sum = 0.0;
         for (int i = 1; i <= N; i++) {
-            sum += 1.0 / Math.pow(i, 2);
+            sum += 1.0 / Math.pow(i+1, 2);
         }
         return 1.0 / sum;
     }

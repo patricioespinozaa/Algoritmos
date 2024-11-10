@@ -10,7 +10,7 @@ import java.util.Set;
 
 public class Experimento3 {
     public static void main(String[] args) {
-        double[] factors = {0.01, 0.02, 0.03, 0.04, 0.05, 0.06, 0.07, 0.08, 0.09, 0,1}; 
+        double[] factors = {0.1}; 
         Random rand = new Random();
         String filePath = "../resultados/experimento3_resultados.csv";
 
