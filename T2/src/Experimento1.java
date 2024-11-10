@@ -8,8 +8,6 @@ import java.util.List;
 import java.util.Random;
 import java.util.Set;
 
-// IGUAL AL EXPERIMENTO 1 PERO GUARDA LAS RESULTADOS PARA PODER GRAFICAR ** REQUIERE PROBRARLO
-
 public class Experimento1 {
     public static void main(String[] args) {
         double[] factors = {0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0};
