@@ -66,7 +66,7 @@ public class Experimento2 {
                 // Calcular constante C para función de probabilidad
                 double C = calculateC(N);
 
-                // Crear arreglo B con probabilidades sesgadas
+                // Crear arreglo B con probabilidades sesgadas -> f(i) = C / (i+1)^2 donde se guardan la cantidad de busquedas
                 List<Integer> B = new ArrayList<>(M);
                 for (int i = 0; i < N; i++) {
                     int frequency = (int) Math.floor(M * (C / Math.pow(i + 1, 2)));

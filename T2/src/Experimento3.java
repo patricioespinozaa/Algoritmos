@@ -10,7 +10,7 @@ import java.util.Set;
 
 public class Experimento3 {
     public static void main(String[] args) {
-        double[] factors = {0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0}; // , 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0
+        double[] factors = {0.01, 0.02, 0.03, 0.04, 0.05, 0.06, 0.07, 0.08, 0.09, 0,1}; 
         Random rand = new Random();
         String filePath = "../resultados/experimento3_resultados.csv";
 
@@ -39,7 +39,7 @@ public class Experimento3 {
                 }
                 List<Integer> A = new ArrayList<>(uniqueKeys);  // Lista de elementos únicos
 
-                // Ordenar A antes de realizar la inserción en ambos árboles
+                //* ==== Ordenar A antes de realizar la inserción en ambos árboles ==== *//
                 Collections.sort(A);
 
                 System.out.println("\nInicio del Experimento 3 con N = " + N);
