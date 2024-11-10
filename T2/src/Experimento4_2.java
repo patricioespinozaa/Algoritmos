@@ -1,45 +1,118 @@
-import java.util.Arrays;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashSet;
+import java.util.List;
 import java.util.Random;
+import java.util.Set;
+import java.util.Arrays;
 
 public class Experimento4_2 {
 
     public static void main(String[] args) {
-        double[] factors = {0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0};
-        for (double factor : factors) {
-            int N = (int) (factor * 1_000_000);
-            int M = 100 * N;
-            int[] A = new int[N];
-            Random rand = new Random();
+        double[] factors = {0.01, 0.02, 0.03, 0.04, 0.05, 0.06, 0.07, 0.08, 0.09, 0,1};
+        Random rand = new Random();
+        int iteration = 1;
+        String filePath = "../resultados/experimento4_resultados.csv";
 
-            // Inicializa A con valores aleatorios
-            for (int i = 0; i < N; i++) {
-                A[i] = rand.nextInt(N);
+        try (FileWriter fileWriter = new FileWriter(filePath);
+             PrintWriter printWriter = new PrintWriter(fileWriter)) {
+
+            // Escribir encabezado del archivo CSV
+            printWriter.println("N,M,Tiempo_Insercion_ABB,Tiempo_Insercion_Splay,Tiempo_Busqueda_ABB,Tiempo_Busqueda_Splay,Costo_Promedio_ABB,Costo_Promedio_Splay");
+
+            for (double factor : factors) {
+                int N = (int) (factor * 1_000_000);
+                int M = 100 * N;
+
+                System.out.println("Iteración: " + iteration);
+                System.out.println("Valor de N: " + N);
+                System.out.println("Número de búsquedas M: " + M);
+
+                // Generar N enteros únicos para insertar
+                Set<Integer> uniqueKeys = new HashSet<>();
+                while (uniqueKeys.size() < N) {
+                    int key = rand.nextInt(N * 10);
+                    uniqueKeys.add(key);
+                }
+                List<Integer> A = new ArrayList<>(uniqueKeys);
+                Collections.shuffle(A);
+
+                // Copia y ordena A en C
+                int[] C = A.stream().mapToInt(Integer::intValue).toArray();
+                Arrays.sort(C);
+
+                System.out.println("\nInicio del Experimento 4 con N = " + N);
+
+                // Crear e inicializar árboles
+                IterativeBinarySearchTree bst = new IterativeBinarySearchTree();
+                IterativeSplayTree splayTree = new IterativeSplayTree();
+
+                // Tiempo de inserción en BinarySearchTree
+                long startTime = System.nanoTime();
+                for (int value : C) {
+                    bst.insert(value);
+                }
+                long endTime = System.nanoTime();
+                double tiempoInsercionABB = (endTime - startTime) / 1e6;
+                System.out.println("Tiempo de inserción ABB (Experimento 4): " + tiempoInsercionABB + " ms");
+
+                // Tiempo de inserción en SplayTree
+                startTime = System.nanoTime();
+                for (int value : C) {
+                    splayTree.insert(value);
+                }
+                endTime = System.nanoTime();
+                double tiempoInsercionSplay = (endTime - startTime) / 1e6;
+                System.out.println("Tiempo de inserción Splay Tree (Experimento 4): " + tiempoInsercionSplay + " ms");
+
+                // Calcular constante C para función de probabilidad
+                double constantC = calculateConstantC(N);
+                System.out.println("Constante C calculada para función de probabilidad: " + constantC);
+
+                // Crear arreglo B con probabilidades sesgadas
+                ArrayList<Integer> B = new ArrayList<>();
+                for (int i = 0; i < N; i++) {
+                    int frequency = (int) Math.floor(M * (constantC / Math.pow(i + 1, 2)));
+                    for (int j = 0; j < frequency; j++) {
+                        B.add(A.get(i));
+                    }
+                }
+                Collections.shuffle(B);
+
+                // Realizar búsquedas en BinarySearchTree con B sesgado
+                startTime = System.nanoTime();
+                for (int key : B) {
+                    bst.search(key);
+                }
+                endTime = System.nanoTime();
+                double tiempoBusquedaABB = (endTime - startTime) / 1e6;
+                double costoPromedioABB = tiempoBusquedaABB / M;
+                System.out.println("Tiempo de búsqueda ABB (Experimento 4): " + tiempoBusquedaABB + " ms");
+                System.out.println("Costo promedio de búsqueda ABB: " + costoPromedioABB + " ms por búsqueda");
+
+                // Realizar búsquedas en SplayTree con B sesgado
+                startTime = System.nanoTime();
+                for (int key : B) {
+                    splayTree.search(key);
+                }
+                endTime = System.nanoTime();
+                double tiempoBusquedaSplay = (endTime - startTime) / 1e6;
+                double costoPromedioSplay = tiempoBusquedaSplay / M;
+                System.out.println("Tiempo de búsqueda Splay Tree (Experimento 4): " + tiempoBusquedaSplay + " ms");
+                System.out.println("Costo promedio de búsqueda Splay Tree: " + costoPromedioSplay + " ms por búsqueda\n");
+
+                // Guardar los resultados en el archivo CSV
+                printWriter.printf("%d,%d,%.4f,%.4f,%.4f,%.4f,%.8f,%.8f%n",
+                        N, M, tiempoInsercionABB, tiempoInsercionSplay, tiempoBusquedaABB, tiempoBusquedaSplay, costoPromedioABB, costoPromedioSplay);
+                iteration++;
+                System.out.println("---------------------------------------------------");
             }
 
-            // Copia y ordena A en C
-            int[] C = Arrays.copyOf(A, N);
-            Arrays.sort(C);
-
-            // Inserta los elementos de C en el árbol Splay
-            IterativeSplayTree tree = new IterativeSplayTree();
-            for (int value : C) {
-                tree.insert(value);
-            }
-
-            // Calcula la constante C para la función de probabilidad f
-            double constantC = calculateConstantC(N);
-
-            // Realiza M búsquedas en el árbol usando la función f para determinar las probabilidades
-            long startTime = System.nanoTime();
-            for (int i = 0; i < M; i++) {
-                int index = selectIndex(N, constantC);
-                tree.search(A[index]);
-            }
-            long endTime = System.nanoTime();
-
-            // Calcula el tiempo promedio de búsqueda
-            double averageSearchTime = (endTime - startTime) / (double) M;
-            System.out.printf("N = %d, M = %d, Tiempo promedio de búsqueda: %.2f ns%n", N, M, averageSearchTime);
+        } catch (IOException e) {
+            System.err.println("Error al escribir en el archivo: " + e.getMessage());
         }
     }
 
@@ -52,30 +125,8 @@ public class Experimento4_2 {
     private static double calculateConstantC(int N) {
         double sum = 0.0;
         for (int i = 0; i < N; i++) {
-            sum += 1.0 / ((i + 1) * (i + 1));
+            sum += 1.0 / Math.pow(i + 1, 2);
         }
         return 1.0 / sum;
-    }
-
-    /**
-     * Selecciona un índice en el arreglo A basado en la función de probabilidad f(i) = C / (i + 1)^2
-     * y la constante C para ajustar las probabilidades.
-     *
-     * @param N Número de elementos en el arreglo A
-     * @param constantC La constante C calculada para normalizar la función f
-     * @return Un índice basado en la probabilidad calculada
-     */
-    private static int selectIndex(int N, double constantC) {
-        Random rand = new Random();
-        double threshold = rand.nextDouble();
-        double cumulativeProbability = 0.0;
-
-        for (int i = 0; i < N; i++) {
-            cumulativeProbability += constantC / ((i + 1) * (i + 1));
-            if (cumulativeProbability >= threshold) {
-                return i;
-            }
-        }
-        return N - 1; // Retorna el último índice si no se alcanzó el umbral
     }
 }

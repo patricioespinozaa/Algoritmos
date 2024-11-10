@@ -105,3 +105,13 @@ Costo promedio de búsqueda ABB: 0.13435605455555555 ms por búsqueda
 Tiempo de búsqueda Splay Tree (Experimento 3): 6374.3409 ms
 Costo promedio de búsqueda Splay Tree: 7.082601E-4 ms por búsqueda
 ---------------------------------------------------
+Valor de N: 100000
+Número de búsquedas M: 10000000
+
+Inicio del Experimento 3 con N = 100000
+Tiempo de inserción ABB (Experimento 3): 9684.3367 ms
+Tiempo de inserción Splay Tree (Experimento 3): 16.2523 ms
+Tiempo de búsqueda ABB (Experimento 3): 1578585.2522 ms
+Costo promedio de búsqueda ABB: 0.15785852522 ms por búsqueda
+Tiempo de búsqueda Splay Tree (Experimento 3): 7553.2968 ms
+Costo promedio de búsqueda Splay Tree: 7.5532968E-4 ms por búsqueda
