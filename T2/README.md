@@ -14,12 +14,12 @@ Para ejecutar este codigo necesitas hacer lo siguiente:
 
 ## Compilación
 En terminal ejecutar:
-> cd src
+> cd src <br>
 > javac *.java  
 
 ## Ejecutar
 En terminal ejecutar:
-> cd src
+> cd src <br>
 > Dependiendo del experimento: java Experimento1 | java Experimento2 | java Experimento3 | java Experimento4
 
 ## Tener en cuenta lo siguiente
