@@ -24,6 +24,7 @@ En terminal ejecutar:
 
 ## Tener en cuenta lo siguiente
 Se usaron clases de Splay Tree y ABB recursivos e iterativos para los experimentos 1 & 2 y 3 & 4 respectivamente. Estas clases son análogas entre si, la razón del uso iterativo fue para evitar errores de recursión en los últimos experimentos. Cada experimento se puede ejecutar por separado para garantizar una independencia entre los datos y que todas las variables sean inicializadas correctamente desde 0 en cada iteración, además de poder guardar los datos de los resultados de manera segura ante un error entre experimentos. Por tanto, el MAIN en este repositorio corresponde a los archivos Experimento1.java, Experimento2.java, Experimento3.java, Experimento4.java.
+## Los Graficos se añaden en la carpeta Resultados
 
 ## Repositorio
 * https://github.com/patricioespinozaa/Algoritmos/tree/main/T2
